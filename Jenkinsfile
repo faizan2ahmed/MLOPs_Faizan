@@ -10,7 +10,10 @@ pipeline {
         
         stage('Installation of dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                script {
+                    sh 'cat requirements.txt'
+                    sh 'pip install --verbose -r requirements.txt'
+                }
             }
         }
     }
