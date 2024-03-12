@@ -23,7 +23,7 @@ pipeline {
         stage('Deploying') {
             steps {
                 script {
-                    def branchName = env.GIT_BRANCH
+                    def branchName = env.GIT_BRANCH.substring(env.GIT_BRANCH.lastIndexOf('/') + 1)
                     echo "Branch name: ${branchName}"
                     if (branchName == 'main') {
                         echo 'Deploying to production'
