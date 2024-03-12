@@ -12,7 +12,7 @@ pipeline {
             steps {
                 dir('MLOPs_Faizan') {
                     script {
-                        sh 'cat requirements.txt'
+                        sh 'type requirements.txt'
                         sh 'pip install --verbose -r requirements.txt'
                     }
                 }
