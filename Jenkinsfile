@@ -10,10 +10,13 @@ pipeline {
         
         stage('Installation of dependencies') {
             steps {
-                script {
-                    bat 'type requirements.txt'
-                    bat 'pip install --verbose -r requirements.txt'
-                }
+                bat 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Execution of test.py') {
+            steps {
+                bat 'python test.py'
             }
         }
     }
