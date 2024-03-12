@@ -24,6 +24,7 @@ pipeline {
             steps {
                 script {
                     def branchName = bat(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+                    echo "Branch name: ${branchName}"
                     if (branchName == 'main') {
                         echo 'Deploying to production'
                     } else {
