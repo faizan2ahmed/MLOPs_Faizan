@@ -23,7 +23,7 @@ pipeline {
         stage('Deploying') {
             steps {
                 script {
-                    def branchName = bat(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+                    def branchName = env.BRANCH_NAME
                     echo "Branch name: ${branchName}"
                     if (branchName == 'main') {
                         echo 'Deploying to production'
