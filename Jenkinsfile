@@ -12,8 +12,8 @@ pipeline {
             steps {
                 dir('MLOPs_Faizan') {
                     script {
-                        sh 'type requirements.txt'
-                        sh 'pip install --verbose -r requirements.txt'
+                        bat 'type requirements.txt'
+                        bat 'pip install --verbose -r requirements.txt'
                     }
                 }
             }
