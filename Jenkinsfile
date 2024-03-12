@@ -10,11 +10,9 @@ pipeline {
         
         stage('Installation of dependencies') {
             steps {
-                dir('MLOPs_Faizan') {
-                    script {
-                        bat 'type requirements.txt'
-                        bat 'pip install --verbose -r requirements.txt'
-                    }
+                script {
+                    bat 'type requirements.txt'
+                    bat 'pip install --verbose -r requirements.txt'
                 }
             }
         }
